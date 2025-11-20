@@ -1,0 +1,4146 @@
+{
+	"info": {
+		"_postman_id": "e9c72334-c5b1-416e-889e-7603a87d048b",
+		"name": "Kotlin Validator Spring Webflux API",
+		"description": "Complete test collection for kotlin-validator-spring module with success and failure test cases for all validators including Address Validation with Geocoding API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1510588"
+	},
+	"item": [
+		{
+			"name": "Success Tests",
+			"item": [
+				{
+					"name": "String Validations",
+					"item": [
+						{
+							"name": "Required - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"This is a valid required string\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/required",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"required"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Email - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"valid.email@example.com\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/email",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "URL - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"url\": \"https://www.example.com\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/url",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"url"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UUID - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"uuid\": \"550e8400-e29b-41d4-a716-446655440000\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/uuid",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"uuid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Length - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"exact\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/length",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"length"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Min Length - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"This string is long enough\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/min-length",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"min-length"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Max Length - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"Short\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/max-length",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"max-length"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pattern - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"Validpattern\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/pattern",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"pattern"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alpha - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"OnlyLetters\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/alpha",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"alpha"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alphanumeric - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"Letters123\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/alphanumeric",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"alphanumeric"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ASCII - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"ASCII text!\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/ascii",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"ascii"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Lowercase - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"lowercase\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/lowercase",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"lowercase"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Uppercase - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"UPPERCASE\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/uppercase",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"uppercase"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Starts With - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"PREFIX_content\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/starts-with",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"starts-with"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ends With - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"content_SUFFIX\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/ends-with",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"ends-with"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contains - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"This contains keyword\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/contains",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"contains"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "One Of - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"status\": \"active\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/one-of",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"one-of"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not One Of - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"allowed\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/not-one-of",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"not-one-of"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "JSON - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"jsonData\": \"{\\\"key\\\": \\\"value\\\"}\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/json",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"json"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Luhn - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cardNumber\": \"4532015112830366\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/luhn",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"luhn"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Numeric Validations",
+					"item": [
+						{
+							"name": "Min - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 15.5\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/min",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"min"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Max - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 50.0\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/max",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"max"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Between - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 50.0\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/between",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"between"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Positive - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 42.5\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/positive",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"positive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Negative - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": -42.5\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/negative",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"negative"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 0.0\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/zero",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"zero"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Integer - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 42\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/integer",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"integer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Decimal - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 42.567\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/decimal",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"decimal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Divisible By - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 20\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/divisible-by",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"divisible-by"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Even - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 42\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/even",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"even"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Odd - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 43\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/odd",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"odd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DecimalPlaces - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": \"99.99\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/decimal-places",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"decimal-places"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Collection Validations",
+					"item": [
+						{
+							"name": "Size - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": [\"item1\", \"item2\", \"item3\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/size",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"size"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Min Size - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": [\"item1\", \"item2\", \"item3\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/min-size",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"min-size"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Max Size - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": [\"item1\", \"item2\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/max-size",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"max-size"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Empty - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": [\"item1\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/not-empty",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"not-empty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Distinct - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"values\": [\"apple\", \"banana\", \"orange\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/distinct",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"distinct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contains Value - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"roles\": [\"user\", \"admin\", \"moderator\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/contains-value",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"contains-value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Contains - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tags\": [\"allowed\", \"safe\", \"verified\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/not-contains",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"not-contains"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DateTime Validations",
+					"item": [
+						{
+							"name": "Date Format - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"2024-12-25\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/date-format",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"date-format"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ISO Date - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"2024-12-25\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/iso-date",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"iso-date"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ISO DateTime - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"dateTime\": \"2024-12-25T10:30:00Z\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/iso-datetime",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"iso-datetime"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Future - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"2030-01-01\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/future",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"future"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Past - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"2020-01-01\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/past",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"past"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Today - Success",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											" var today = new Date();",
+											"     var dateString = today.getFullYear() + '-' + ",
+											"                      String(today.getMonth() + 1).padStart(2, '0') + '-' + ",
+											"                      String(today.getDate()).padStart(2, '0');",
+											"     pm.environment.set(\"localDate\", dateString);"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"{{localDate}}\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/today",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"today"
+									]
+								},
+								"description": "Note: Update the date to today's date"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Network Validations",
+					"item": [
+						{
+							"name": "IPv4 - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ipAddress\": \"192.168.1.1\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/ipv4",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"ipv4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IPv6 - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ipAddress\": \"2001:0db8:85a3:0000:0000:8a2e:0370:7334\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/ipv6",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"ipv6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IP - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ipAddress\": \"10.0.0.1\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/ip",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"ip"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MAC Address - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"macAddress\": \"00:1B:44:11:3A:B7\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/mac-address",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"mac-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Port - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"port\": 8080\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/port",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"port"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "File Validations",
+					"item": [
+						{
+							"name": "MIME Type - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fileType\": \"image/png\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/file/mime-type",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"file",
+										"mime-type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "File Extension - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fileName\": \"document.pdf\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/file/file-extension",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"file",
+										"file-extension"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Max File Size - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fileSize\": 1048576\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/file/max-file-size",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"file",
+										"max-file-size"
+									]
+								},
+								"description": "1MB = 1048576 bytes"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Conditional Validations",
+					"item": [
+						{
+							"name": "Same - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"SecurePass123\",\n  \"confirmPassword\": \"SecurePass123\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/same",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"same"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Different - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"value1\",\n  \"email\": \"value2\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/different",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"different"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Required If - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"condition\": \"yes\",\n  \"field\": \"required value\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/required-if",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"required-if"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Required Unless - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"hasCoupon\": \"true\",\n  \"field\": null\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/required-unless",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"required-unless"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Required With - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"otherField\": \"present\",\n  \"field\": \"required value\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/required-with",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"required-with"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Required Without - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"selfDeclaration\": \"required value\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/required-without",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"required-without"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Structural Validations",
+					"item": [
+						{
+							"name": "Nullable - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"field\": null\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/structural/nullable",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"structural",
+										"nullable"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Valid - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nested\": {\n    \"field\": \"valid\"\n  }\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/structural/valid",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"structural",
+										"valid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FailFast - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": null\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/structural/fail-fast",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"structural",
+										"fail-fast"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Boolean Validations",
+					"item": [
+						{
+							"name": "Accepted - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"termsAccepted\": true\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/boolean/accepted",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"boolean",
+										"accepted"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Scenario Validations",
+					"item": [
+						{
+							"name": "Register - Success",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"SecurePass123!\",\n  \"passwordConfirmation\": \"SecurePass123!\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"age\": 28,\n  \"phoneNumber\": \"+14155552671\",\n  \"acceptTerms\": true\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/register",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Nested 2 Levels - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"order\": {\n    \"id\": \"ORD123\",\n    \"status\": \"pending\",\n    \"total\": 100.50\n  },\n  \"customer\": {\n    \"name\": \"Jane Doe\",\n    \"address\": {\n      \"street\": \"Main Street\",\n      \"city\": \"New York\",\n      \"postalCode\": \"NY10123456\"\n    }\n  }\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/nested-2-levels",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"nested-2-levels"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products Array - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"products\": [\n    {\n      \"name\": \"Laptop Computer\",\n      \"description\": \"High-performance laptop with 16GB RAM and 512GB SSD\",\n      \"price\": 1299.99,\n      \"quantity\": 10,\n      \"category\": \"Electronics\",\n      \"sku\": \"LAP-2024-001\"\n    },\n    {\n      \"name\": \"Wireless Mouse\",\n      \"description\": \"Ergonomic wireless mouse with USB receiver\",\n      \"price\": 29.99,\n      \"quantity\": 50,\n      \"category\": \"Accessories\",\n      \"sku\": \"LAP-2024-002\"\n    },\n    {\n      \"name\": \"USB-C Cable\",\n      \"description\": \"High-speed USB-C to USB-C cable 6 feet long\",\n      \"price\": 15.99,\n      \"quantity\": 100,\n      \"category\": \"Cables\",\n      \"sku\": \"USBC-2024-15\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/products-array",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"products-array"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Address Validation - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fullAddress\": \"1600 Amphitheatre Parkway, Mountain View, CA\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/address",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Address Validation - French",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "fr"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fullAddress\": \"1600 Amphitheatre Parkway, Mountain View, CA\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/address",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Shipping Validation - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"recipientName\": \"John Doe\",\n  \"streetAddress\": \"1600 Amphitheatre Parkway, Mountain View, CA\",\n  \"city\": \"Mountain View\",\n  \"state\": \"CA\",\n  \"zipCode\": \"94043\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"+14155551234\",\n  \"deliveryInstructions\": \"Leave at front door\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/shipping",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"shipping"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order Validation - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productName\": \"Laptop Computer\",\n  \"quantity\": 2,\n  \"pricePerUnit\": 999.99,\n  \"shippingAddress\": {\n    \"addressLine1\": \"1600 Amphitheatre Parkway, Mountain View, CA\",\n    \"addressLine2\": \"Building 1\",\n    \"city\": \"Mountain View\",\n    \"country\": \"USA\"\n  }\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/order",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"order"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Fail Tests",
+			"item": [
+				{
+					"name": "String Validations",
+					"item": [
+						{
+							"name": "Required - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": null\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/required",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"required"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Email - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"invalid-email\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/email",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "URL - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"url\": \"not-a-valid-url\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/url",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"url"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UUID - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"uuid\": \"not-a-uuid\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/uuid",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"uuid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Length - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"wrong length, this is more than 20 characters\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/length",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"length"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Min Length - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"tiny\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/min-length",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"min-length"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Max Length - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"This string is way too long and exceeds the maximum allowed length\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/max-length",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"max-length"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pattern - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"invalid123\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/pattern",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"pattern"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alpha - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"Letters123\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/alpha",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"alpha"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alphanumeric - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"Letters@#$\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/alphanumeric",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"alphanumeric"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ASCII - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"Unicode: 你好\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/ascii",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"ascii"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Lowercase - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"MixedCase\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/lowercase",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"lowercase"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Uppercase - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"MixedCase\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/uppercase",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"uppercase"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Starts With - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"wrong_prefix\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/starts-with",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"starts-with"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ends With - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"content_wrong\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/ends-with",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"ends-with"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contains - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"This does not have it\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/contains",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"contains"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "One Of - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"status\": \"invalid_status\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/one-of",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"one-of"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not One Of - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/not-one-of",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"not-one-of"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "JSON - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"data\": \"not valid json\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/json",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"json"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Luhn - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cardNumber\": \"1234567890123456\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/luhn",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"luhn"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Numeric Validations",
+					"item": [
+						{
+							"name": "Min - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 5.0\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/min",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"min"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Max - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 500.0\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/max",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"max"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Between - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 150.0\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/between",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"between"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Positive - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": -10.0\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/positive",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"positive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Negative - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 10.0\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/negative",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"negative"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 0.01\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/zero",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"zero"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Integer - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 42.5\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/integer",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"integer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Decimal - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 4\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/decimal",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"decimal"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Divisible By - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 13\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/divisible-by",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"divisible-by"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Even - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 43\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/even",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"even"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Odd - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": 42\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/odd",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"odd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DecimalPlaces - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": \"99.9\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/numeric/decimal-places",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"numeric",
+										"decimal-places"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Collection Validations",
+					"item": [
+						{
+							"name": "Size - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": [\"item1\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/size",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"size"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Min Size - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": []\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/min-size",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"min-size"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Max Size - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": [\"item1\", \"item2\", \"item3\", \"item4\", \"item5\", \"item6\", \"item7\", \"item8\", \"item9\", \"item10\", \"item11\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/max-size",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"max-size"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Empty - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"items\": []\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/not-empty",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"not-empty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Distinct - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"values\": [\"apple\", \"banana\", \"apple\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/distinct",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"distinct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contains Value - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"roles\": [\"user\", \"moderator\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/contains-value",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"contains-value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Contains - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tags\": [\"allowed\", \"banned\", \"verified\"]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/collection/not-contains",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"collection",
+										"not-contains"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DateTime Validations",
+					"item": [
+						{
+							"name": "Date Format - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"25/12/2024\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/date-format",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"date-format"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ISO Date - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"12/25/2024\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/iso-date",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"iso-date"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ISO DateTime - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"dateTime\": \"2024-12-25 10:30:00\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/iso-datetime",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"iso-datetime"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Future - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"2020-01-01\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/future",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"future"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Past - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"2030-01-01\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/past",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"past"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Today - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"2020-01-01\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/datetime/today",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"datetime",
+										"today"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Network Validations",
+					"item": [
+						{
+							"name": "IPv4 - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ipAddress\": \"999.999.999.999\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/ipv4",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"ipv4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IPv6 - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ipAddress\": \"invalid:ipv6:address\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/ipv6",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"ipv6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IP - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ipAddress\": \"not.an.ip.address\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/ip",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"ip"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MAC Address - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"macAddress\": \"invalid-mac\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/mac-address",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"mac-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Port - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"port\": 99999\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/network/port",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"network",
+										"port"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "File Validations",
+					"item": [
+						{
+							"name": "MIME Type - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fileType\": \"invalid/mime\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/file/mime-type",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"file",
+										"mime-type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "File Extension - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fileName\": \"document.exe\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/file/file-extension",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"file",
+										"file-extension"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Max File Size - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fileSize\": 99999999999\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/file/max-file-size",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"file",
+										"max-file-size"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Conditional Validations",
+					"item": [
+						{
+							"name": "Same - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"SecurePass123\",\n  \"confirmPassword\": \"DifferentPass123\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/same",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"same"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Different - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"same\",\n  \"email\": \"same\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/different",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"different"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Required If - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userType\": \"premium\",\n  \"licenseKey\": null\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/required-if",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"required-if"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Required Unless - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"condition\": \"no\",\n  \"field\": null\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/required-unless",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"required-unless"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Required With - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"present\",\n  \"field\": null\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/required-with",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"required-with"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Required Without - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"field\": null\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/conditional/required-without",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"conditional",
+										"required-without"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Structural Validations",
+					"item": [
+						{
+							"name": "Nullable - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"value\": \"1\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/structural/nullable",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"structural",
+										"nullable"
+									]
+								},
+								"description": "Missing required field"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Boolean Validations",
+					"item": [
+						{
+							"name": "Accepted - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"value\": \"false\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/boolean/accepted",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"boolean",
+										"accepted"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Scenario Validations",
+					"item": [
+						{
+							"name": "Register - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "fr",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"invalid-email\",\n  \"password\": \"weak\",\n  \"passwordConfirmation\": \"different\",\n  \"firstName\": \"J\",\n  \"lastName\": \"D\",\n  \"age\": 15,\n  \"phoneNumber\": \"invalid\",\n  \"acceptTerms\": false\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/register",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"register"
+									]
+								},
+								"description": "Multiple validation failures"
+							},
+							"response": []
+						},
+						{
+							"name": "Nested 2 Levels - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"order\": {\n    \"id\": null,\n    \"status\": \"ab\",\n    \"total\": -10.0\n  },\n  \"customer\": {\n    \"name\": \"J\",\n    \"address\": {\n      \"street\": \"M\",\n      \"city\": \"N\",\n      \"postalCode\": \"INVALID\"\n    }\n  }\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/nested-2-levels",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"nested-2-levels"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products Array - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "fr",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"products\": [\n    {\n      \"name\": \"AB\",\n      \"description\": \"Short\",\n      \"price\": 50000.00,\n      \"quantity\": -5,\n      \"category\": \"AB\",\n      \"sku\": \"valid\"\n    },\n     {\n      \"name\": \"BC\",\n      \"description\": \"Short\",\n      \"price\": 500000.00,\n      \"quantity\": -3,\n      \"category\": \"AB\",\n      \"sku\": \"\"\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/products-array",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"products-array"
+									]
+								},
+								"description": "Multiple validation failures: short name, short description, invalid price, negative quantity, short category, invalid SKU"
+							},
+							"response": []
+						},
+						{
+							"name": "Address Validation - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"fullAddress\": \"invalid xyz address 12345\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/address",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Shipping Validation - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "fr",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"recipientName\": \"JD\",\n  \"streetAddress\": \"nonexistent address xyz123\",\n  \"city\": \"X\",\n  \"state\": \"C\",\n  \"zipCode\": \"1234\",\n  \"email\": \"not-an-email\",\n  \"phone\": \"123\",\n  \"deliveryInstructions\": \"short\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/shipping",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"shipping"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order Validation - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productName\": \"PC\",\n  \"quantity\": -1,\n  \"pricePerUnit\": -50,\n  \"shippingAddress\": {\n    \"addressLine1\": \"invalid xyz address\",\n    \"city\": \"X\",\n    \"country\": \"U\"\n  }\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/scenario/order",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"scenario",
+										"order"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "webfluxBaseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

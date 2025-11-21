@@ -10,6 +10,8 @@ group = "com.noovoweb"
 version = "0.0.1-SNAPSHOT"
 description = "Demo project for Spring Boot"
 
+val kotlinValidatorVersion = "0.1.0-beta.1"
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
@@ -28,10 +30,10 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
 
-    implementation("com.noovoweb:kotlin-validator-annotations:0.1.1")
-    implementation("com.noovoweb:kotlin-validator-runtime:0.1.1")
-    implementation("com.noovoweb:kotlin-validator-spring-webflux:0.1.1")
-    ksp("com.noovoweb:kotlin-validator-ksp:0.1.1")
+    implementation("com.noovoweb:kotlin-validator-annotations:$kotlinValidatorVersion")
+    implementation("com.noovoweb:kotlin-validator-runtime:$kotlinValidatorVersion")
+    implementation("com.noovoweb:kotlin-validator-spring-webflux:$kotlinValidatorVersion")
+    ksp("com.noovoweb:kotlin-validator-processor:$kotlinValidatorVersion")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
 

@@ -114,7 +114,7 @@ class UserHandler(
 ```json
 {
   "status": 422,
-  "error": "Validation Failed",
+  "message": "Validation Failed",
   "errors": {
     "email": ["Please enter a valid email address"],
     "password": ["Password must be at least 12 characters..."]
@@ -143,10 +143,10 @@ curl -X POST http://localhost:8081/webflux/api/scenario/register \
 
 ```kotlin
 dependencies {
-    implementation("com.noovoweb:kotlin-validator-annotations:0.1.1")
-    implementation("com.noovoweb:kotlin-validator-runtime:0.1.1")
-    implementation("com.noovoweb:kotlin-validator-spring-webflux:0.1.1")
-    ksp("com.noovoweb:kotlin-validator-ksp:0.1.1")
+    implementation("com.noovoweb:kotlin-validator-annotations:0.1.0-beta.1")
+    implementation("com.noovoweb:kotlin-validator-runtime:0.1.0-beta.1")
+    implementation("com.noovoweb:kotlin-validator-spring-webflux:0.1.0-beta.1")
+    ksp("com.noovoweb:kotlin-validator-processor:0.1.0-beta.1")
 }
 ```
 

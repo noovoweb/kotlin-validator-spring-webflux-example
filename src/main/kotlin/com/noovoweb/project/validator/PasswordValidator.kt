@@ -2,6 +2,7 @@ package com.noovoweb.project.validator
 
 import com.noovoweb.validator.CustomValidator
 import com.noovoweb.validator.ValidationContext
+import com.noovoweb.validator.ValidationException
 
 
 @Target(AnnotationTarget.PROPERTY)
@@ -36,5 +37,21 @@ object PasswordValidator {
         val hasDigit = value.any { it.isDigit() }
 
         return hasMinLength && hasMaxLength && hasUppercase && hasLowercase && hasDigit
+
+//        or
+//        return if (hasMinLength && hasMaxLength && hasUppercase && hasLowercase && hasDigit) {
+//            true
+//        } else {
+//            val message = context.messageProvider.getMessage(
+//                "password.strong_password",
+//                null,
+//                context.locale
+//            )
+//            throw ValidationException(
+//                mapOf(
+//                    "password" to listOf(message) // key name must be identical in the request
+//                )
+//            )
+//        }
     }
 }

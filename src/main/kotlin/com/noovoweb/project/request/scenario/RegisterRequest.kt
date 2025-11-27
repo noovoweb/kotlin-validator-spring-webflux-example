@@ -24,6 +24,7 @@ data class RegisterRequest(
     val email: String?,
 
     @Required
+    @MinLength(5)
     @StrongPassword
     val password: String?,
 

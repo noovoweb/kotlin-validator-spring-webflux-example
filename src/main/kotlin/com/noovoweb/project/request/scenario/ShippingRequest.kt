@@ -1,7 +1,7 @@
 package com.noovoweb.project.request.scenario
 
-import com.noovoweb.validator.*
 import com.noovoweb.project.validator.ValidAddress
+import com.noovoweb.validator.*
 
 /**
  * Example request for shipping/delivery with address validation.

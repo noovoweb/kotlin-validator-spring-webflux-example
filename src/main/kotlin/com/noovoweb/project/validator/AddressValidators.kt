@@ -1,10 +1,19 @@
 package com.noovoweb.project.validator
 
+import com.noovoweb.validator.CustomValidator
 import com.noovoweb.validator.ValidationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.awaitBody
+
+@Target(AnnotationTarget.PROPERTY)
+@Retention(AnnotationRetention.SOURCE)
+@CustomValidator(
+    validator = "com.noovoweb.project.validator.AddressValidators::validateAddressExists",
+    message = "address.not_found"
+)
+annotation class ValidAddress
 
 /**
  * Validators for address validation using external geocoding APIs.
@@ -39,9 +48,9 @@ object AddressValidators {
     ): Boolean {
         // Null or empty is valid (use @Required for null checking)
         if (value.isNullOrBlank()) return true
-        
+
         // Use the dispatcher from context for IO operations
-        return withContext(Dispatchers.IO){
+        return withContext(Dispatchers.IO) {
             try {
                 // Call OpenStreetMap Nominatim geocoding API
                 val response = webClient.get()
@@ -55,27 +64,10 @@ object AddressValidators {
                     }
                     .retrieve()
                     .awaitBody<List<Map<String, Any>>>()
-                
+
                 // Address is valid if we get at least one result
-                val isValid = response.isNotEmpty()
-                
-                // If invalid, throw ValidationException with localized message
-                if (!isValid) {
-                    val message = context.messageProvider.getMessage(
-                        "address.not_found",
-                        null,
-                        context.locale
-                    )
-                    throw com.noovoweb.validator.ValidationException(
-                        mapOf("fullAddress" to listOf(message))
-                    )
-                }
-                
-                true
-                
-            } catch (e: com.noovoweb.validator.ValidationException) {
-                // Re-throw validation exception
-                throw e
+                response.isNotEmpty()
+
             } catch (e: Exception) {
                 // Fail open: On API error, allow the address
                 // This prevents validation from breaking when API is down
@@ -85,44 +77,5 @@ object AddressValidators {
             }
         }
     }
-    
-    /**
-     * Alternative implementation using Google Geocoding API (requires API key).
-     * Commented out for reference.
-     */
-    /*
-    private val googleWebClient = WebClient.builder()
-        .baseUrl("https://maps.googleapis.com/maps/api/geocode")
-        .build()
-    
-    suspend fun validateAddressExistsGoogle(
-        value: String?,
-        context: ValidationContext,
-        apiKey: String
-    ): Boolean {
-        if (value.isNullOrBlank()) return true
-        
-        return withContext(context.dispatcher) {
-            try {
-                val response = googleWebClient.get()
-                    .uri { uriBuilder ->
-                        uriBuilder
-                            .path("/json")
-                            .queryParam("address", value)
-                            .queryParam("key", apiKey)
-                            .build()
-                    }
-                    .retrieve()
-                    .awaitBody<Map<String, Any>>()
-                
-                val results = response["results"] as? List<*>
-                !results.isNullOrEmpty()
-                
-            } catch (e: Exception) {
-                println("Google Geocoding API error: ${e.message}")
-                true  // Fail open
-            }
-        }
-    }
-    */
+
 }

@@ -108,7 +108,6 @@ class Index {
                 POST("/luhn") { request -> stringHandler.luhn(request) }
             }
             "/structural".nest {
-                POST("/nullable") { request -> structuralHandler.nullable(request) }
                 POST("/valid") { request -> structuralHandler.valid(request) }
                 POST("/fail-fast") { request -> structuralHandler.failFast(request) }
             }

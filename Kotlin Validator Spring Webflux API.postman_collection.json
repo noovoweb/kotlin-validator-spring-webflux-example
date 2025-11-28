@@ -1779,35 +1779,6 @@
 					"name": "Structural Validations",
 					"item": [
 						{
-							"name": "Nullable - Success",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"field\": null\n}"
-								},
-								"url": {
-									"raw": "{{webfluxBaseUrl}}/webflux/api/structural/nullable",
-									"host": [
-										"{{webfluxBaseUrl}}"
-									],
-									"path": [
-										"webflux",
-										"api",
-										"structural",
-										"nullable"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Valid - Success",
 							"request": {
 								"method": "POST",
@@ -3869,38 +3840,7 @@
 				},
 				{
 					"name": "Structural Validations",
-					"item": [
-						{
-							"name": "Nullable - Fail",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"value\": \"1\"\n}"
-								},
-								"url": {
-									"raw": "{{webfluxBaseUrl}}/webflux/api/structural/nullable",
-									"host": [
-										"{{webfluxBaseUrl}}"
-									],
-									"path": [
-										"webflux",
-										"api",
-										"structural",
-										"nullable"
-									]
-								},
-								"description": "Missing required field"
-							},
-							"response": []
-						}
-					]
+					"item": []
 				},
 				{
 					"name": "Boolean Validations",

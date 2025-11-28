@@ -16,12 +16,6 @@ class StructuralHandler(
     private val contextProvider: ValidationContextProvider
 ) {
 
-    suspend fun nullable(request: ServerRequest): ServerResponse {
-        val payload = request.awaitBody<NullableRequest>()
-        payload.validate(request, contextProvider.getBase())
-        return ServerResponse.ok().bodyValueAndAwait(DataResponse(data = payload, message = "Validation successful"))
-    }
-
     suspend fun valid(request: ServerRequest): ServerResponse {
         val payload = request.awaitBody<ValidRequest>()
         payload.validate(request, contextProvider.getBase())

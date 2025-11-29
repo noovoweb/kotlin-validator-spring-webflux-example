@@ -154,6 +154,12 @@ class StringHandler(
         return ServerResponse.ok().bodyValueAndAwait(DataResponse(data = payload, message = "Validation successful"))
     }
 
+    suspend fun enum(request: ServerRequest): ServerResponse {
+        val payload = request.awaitBody<EnumRequest>()
+        payload.validate(request, contextProvider.getBase())
+        return ServerResponse.ok().bodyValueAndAwait(DataResponse(data = payload, message = "Validation successful"))
+    }
+
     suspend fun json(request: ServerRequest): ServerResponse {
         val payload = request.awaitBody<JsonRequest>()
         payload.validate(request, contextProvider.getBase())

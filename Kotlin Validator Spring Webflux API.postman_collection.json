@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e9c72334-c5b1-416e-889e-7603a87d048b",
+		"_postman_id": "3dbff2d7-d3d8-48f5-8c3d-4a082854920b",
 		"name": "Kotlin Validator Spring Webflux API",
 		"description": "Complete test collection for kotlin-validator-spring module with success and failure test cases for all validators including Address Validation with Geocoding API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -530,6 +530,35 @@
 										"api",
 										"string",
 										"not-one-of"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Enum - Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"status\": \"ACTIVE\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/enum",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"enum"
 									]
 								}
 							},
@@ -2612,6 +2641,35 @@
 										"api",
 										"string",
 										"not-one-of"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Enum - Fail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"status\": \"INVALID\"\n}"
+								},
+								"url": {
+									"raw": "{{webfluxBaseUrl}}/webflux/api/string/enum",
+									"host": [
+										"{{webfluxBaseUrl}}"
+									],
+									"path": [
+										"webflux",
+										"api",
+										"string",
+										"enum"
 									]
 								}
 							},

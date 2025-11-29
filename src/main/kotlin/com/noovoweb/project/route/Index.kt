@@ -104,6 +104,7 @@ class Index {
                 POST("/contains") { request -> stringHandler.contains(request) }
                 POST("/one-of") { request -> stringHandler.oneOf(request) }
                 POST("/not-one-of") { request -> stringHandler.notOneOf(request) }
+                POST("/enum") { request -> stringHandler.enum(request) }
                 POST("/json") { request -> stringHandler.json(request) }
                 POST("/luhn") { request -> stringHandler.luhn(request) }
             }

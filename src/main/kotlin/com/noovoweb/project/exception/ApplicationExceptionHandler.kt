@@ -1,6 +1,7 @@
 package com.noovoweb.project.exception
 
 import com.noovoweb.project.response.ErrorsResponse
+import com.noovoweb.validator.ValidationException
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.MessageSource
@@ -13,9 +14,7 @@ import org.springframework.web.server.ServerWebInputException
 import java.util.*
 
 /**
- * Application exception handler for specific non-validation exceptions.
- * ValidationException is handled by kotlin-validator-spring-webflux module's ValidationExceptionHandler.
- * Other unhandled exceptions will be handled by Spring's default error handler.
+ * Application exception handler for all exceptions.
  */
 @ControllerAdvice
 class ApplicationExceptionHandler(
@@ -30,6 +29,14 @@ class ApplicationExceptionHandler(
     private fun isProduction() = activeProfile == "prod" || activeProfile == "production"
 
     private fun generateCorrelationId() = UUID.randomUUID().toString()
+
+    @ExceptionHandler(ValidationException::class)
+    fun handleValidationException(e: ValidationException, exchange: ServerWebExchange): ResponseEntity<ErrorsResponse> {
+        logger.warn { "Validation failed: ${e.errors}" }
+
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY)
+            .body(ErrorsResponse(message = "Validation Failed", errors = e.errors))
+    }
 
     @ExceptionHandler(ServerWebInputException::class)
     fun handleServerWebInputException(e: ServerWebInputException, exchange: ServerWebExchange): ResponseEntity<ErrorsResponse> {

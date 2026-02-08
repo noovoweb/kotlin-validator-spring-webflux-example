@@ -210,7 +210,7 @@ class StringHandler(
             .flatMap { payload ->
                 ServerResponse.ok().bodyValue(DataResponse(data = payload, message = "Validation successful (reactive)"))
             }
-            // Error handling happens automatically via ValidationExceptionHandler
+            // Error handling happens via ApplicationExceptionHandler
     }
 
     /**

@@ -11,6 +11,9 @@ version = "0.0.1-SNAPSHOT"
 description = "Demo project for Spring Boot"
 
 extra["kotlin.version"] = "2.3.21"
+// kotlin-validator is compiled against coroutines 1.11.0; override Spring Boot's
+// managed (older) version so the runtime matches and library classes load.
+extra["kotlin-coroutines.version"] = "1.11.0"
 
 val kotlinValidatorVersion: String by project
 
@@ -21,6 +24,9 @@ java {
 }
 
 repositories {
+    // Uncomment to test a locally published library build (./gradlew publishToMavenLocal)
+    // before it's released. Leave commented in commits so builds resolve from Maven Central.
+    // mavenLocal()
     mavenCentral()
 }
 
@@ -36,7 +42,6 @@ dependencies {
     implementation("com.noovoweb:kotlin-validator-spring-webflux:$kotlinValidatorVersion")
     ksp("com.noovoweb:kotlin-validator-processor:$kotlinValidatorVersion")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
